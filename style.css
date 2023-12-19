@@ -1,5 +1,5 @@
 
-@import url(@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'););
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');  
 
 * {
     margin: 0px;
@@ -13,7 +13,18 @@
     --orange: #f78b00;
     --blue: #00285f;
     --gray: #ededed;
-    --black: #696969;
+    --black: #0b1137;
+
+    --color-blue-50: #01011e;
+    --color-blue-100: #070551;
+    --color-blue-200: #05011c;
+
+    --color-dark-50: #121222;
+    --color-dark-100: #010121;
+    --color-dark-900: #14151f;
+
+
+    --color-gradient: linear-gradient(90deg, var(--color-blue-50), var(--color-blue-100), var(--color-blue-200));
 }
 
 
@@ -27,6 +38,11 @@ header{
     width: 100%;
     height: 500px;
     background-color: #696969;
+}
+
+#mode_icon {
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .content {
@@ -65,7 +81,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #00285f;
+    color: #e9ebed;
     text-decoration: none;
 }
 
@@ -73,18 +89,20 @@ nav ul li a:hover {
     color: #00285f83;
 }
 
-nav ul button {
+nav ul span {
     border: 1px solid var(--blue);
     background: transparent;
-    padding: 8px 40px;
+    padding: 9px 30px;
     cursor: pointer;
-    margin-left: 30px;
-    color: #00285f;
+    margin-left: 18px;
+    margin-right: 10px;
+    color: #e5e7e9;
     font-weight: bold;
     border-radius: 4px;
+    
 }
 
-nav ul button:hover {
+nav ul span:hover {
         transition: background, color 0.6s;
     background: #00285f;
     color: white;
@@ -112,11 +130,17 @@ nav ul button:hover {
     bottom: 2%;
 }
 
-
-.header-block .text {
+.header-block h2 {
     position: absolute;
-    bottom: 30%;
+    bottom: 70%;
+    left: 10%;
+}
+
+.header-block p {
+    position: absolute;
+    bottom: 45%;
     left: 15%;
+    min-width: auto;
 }
 
 
@@ -257,7 +281,8 @@ section .card-item3 {
     font-size: 1.1em;
     cursor: pointer;
     transition: 0.3s ease;
-    margin-bottom: 10px;
+    margin-bottom:20px;
+    margin-top: 30px;
 }
 
 .card-item button:hover {
@@ -290,7 +315,8 @@ section .card-item3 {
     font-size: 1.1em;
     cursor: pointer;
     transition: 0.3s ease;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .card-item2 button:hover {
@@ -323,7 +349,8 @@ section .card-item3 {
     font-size: 1.1em;
     cursor: pointer;
     transition: 0.3s ease;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .card-item3 button:hover {
@@ -386,10 +413,11 @@ section .card-item3 {
 }
 
 .right p {
-    max-width: 90%;
+    
+    max-width: auto;
     font-size: 1em;
     letter-spacing: 2px;
-    text-align: right;
+    text-align: top right;
     color: rgba(0 , 0, 0, 0.4);
 }
 
@@ -500,7 +528,90 @@ footer .last {
     justify-content: center;
 }
 
+.dark#loja_form {
+    color: var(--color-light-50);
+    background: var(--color-gradient);
+    animation: light-to-dark-background 0.3s ease-in-out;
+}
 
+.dark#loja_form #mode_icon{
+    color: white;
+}
+
+.dark#loja_form header{
+    background-color: var(--black);
+}
+
+.dark#loja_form header ul{
+    background: var(--black);
+}
+
+.dark#loja_form .filter-card {
+    background: var(--color-gradient);
+}
+
+.dark#loja_form section .card-item{
+    background: var(--color-gradient);
+}
+
+.dark#loja_form section .card-item2 {
+    background: var(--color-gradient);
+}
+
+.dark#loja_form section .card-item3 {
+    background: var(--color-gradient);
+}
+
+.dark#loja_form .about{
+    background-color: var(--color-dark-50);
+}
+
+.dark#loja_form .about-content{
+    background-color: var(--color-dark-900);
+}
+
+.dark#loja_form .feature-card-block{
+    background-color: var(--color-dark-100);
+}
+
+.dark#loja_form h1 {
+    color: white;
+}
+
+.dark#loja_form h2 {
+    color: white;
+}
+
+.dark#loja_form h3 {
+    color: white;
+}
+
+.dark#loja_form p {
+    color: white;
+}
+
+.dark#loja_form .section {
+    color: var(--color-dark-50);
+}
+
+
+@keyframes dark-to-light-background {
+    0% {
+        background-color:var(--color-dark-100);
+    }
+    100.0% {
+        background-color:var(--color-light-50);
+    }
+}
+
+@keyframes light-to-dark-background {
+    0% {
+        background-color:var(--color-light-50);
+    }
+    100.0% {
+        background-color:var(--color-dark-100); 
+    }
+}
 
 @media (max-width: 576px) {
   nav ul li {
